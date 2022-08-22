@@ -17,6 +17,6 @@ class Status extends Model
      */
     public function attention()
     {
-        return $this->belongsTo(Attention::class);
+        return $this->hasMany(Attention::class);
     }
 }

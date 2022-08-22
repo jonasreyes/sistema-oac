@@ -9,19 +9,18 @@ class City extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['state_id','city', 'capital'];
+    protected $fillable = ['state_id','name', 'capital'];
 
     public function state()
     {
         return $this->belongsTo(State::class);
     }
 
-
     public function attention()
     {
         return $this->hasMany(Attention::class);
     }
-
+    
     public function entity()
     {
         return $this->hasMany(Entity::class);

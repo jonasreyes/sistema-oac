@@ -9,7 +9,7 @@ class State extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['state', 'iso_3166_2'];
+    protected $fillable = ['name', 'iso_3166_2'];
 
     public function city()
     {

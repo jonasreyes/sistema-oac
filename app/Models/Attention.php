@@ -7,68 +7,68 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attention extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-           'user_id',
-           'entity_id',
-           'state_id',
-           'city_id',
-           'municipality_id',
-           'parish_id',
-           'address',
-           'attention_date',
-           'asunto',
-           'num_ident',
-           'nombre1',
-           'nombre2',
-           'apellido1',
-           'apellido2',
-           'telefono1',
-           'telefono2',
-           'email',
-           'category_id',
-           'status_id',
-           'observacion',
-    ];
+  protected $fillable = [
+    'user_id',
+    'entity_id',
+    'state_id',
+    'city_id',
+    'municipality_id',
+    'parish_id',
+    'address',
+    'attention_date',
+    'asunto',
+    'num_ident',
+    'nombre1',
+    'nombre2',
+    'apellido1',
+    'apellido2',
+    'telefono1',
+    'telefono2',
+    'email',
+    'category_id',
+    'status_id',
+    'observacion',
+  ];
 
-    public function status()
-    {
-        return $this->hasMany(Status::class);
-    }
+  public function status()
+  {
+    return $this->belongsTo(Status::class);
+  }
 
-    public function category()
-    {
-        return $this->hasMany(Category::class);
-    }
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 
-    public function entity()
-    {
-        return $this->hasMany(Entity::class);
-    }
+  public function entity()
+  {
+    return $this->belongsTo(Entity::class);
+  }
 
-    public function state()
-    {
-        return $this->hasMany(State::class);
-    }
+  public function state()
+  {
+    return $this->belongsTo(State::class);
+  }
 
-    public function city()
-    {
-        return $this->hasMany(City::class);
-    }
-    
-    public function municipality()
-    {
-        return $this->hasMany(Municipality::class);
-    }
+  public function city()
+  {
+    return $this->belongsTo(City::class);
+  }
 
-    public function parish()
-    {
-        return $this->hasMany(Parish::class);
-    }
+  public function municipality()
+  {
+    return $this->belongsTo(Municipality::class);
+  }
 
-    public function user()
-    {
-        return $this->hasMany(User::class);
-    }
+  public function parish()
+  {
+    return $this->belongsTo(Parish::class);
+  }
+
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 }

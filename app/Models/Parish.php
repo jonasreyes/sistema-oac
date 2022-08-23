@@ -14,12 +14,12 @@ class Parish extends Model
         'name'
     ];
 
-    public function attention()
+    public function attentions()
     {
         return $this->hasMany(Attention::class);
     }
 
-    public function entity()
+    public function entities()
     {
         return $this->hasMany(Entity::class);
     }

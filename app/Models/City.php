@@ -16,12 +16,12 @@ class City extends Model
         return $this->belongsTo(State::class);
     }
 
-    public function attention()
+    public function attentions()
     {
         return $this->hasMany(Attention::class);
     }
     
-    public function entity()
+    public function entities()
     {
         return $this->hasMany(Entity::class);
     }

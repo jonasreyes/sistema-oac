@@ -21,6 +21,7 @@ class User extends Authenticatable
     'name',
     'email',
     'password',
+    'role_id'
   ];
 
   /**
@@ -42,8 +43,18 @@ class User extends Authenticatable
     'email_verified_at' => 'datetime',
   ];
 
-  public function attention()
+  public function attentions()
   {
     return $this->hasMany(Attention::class);
+  }
+
+  public function profile()
+  {
+    return $this->hasOne(Profile::class);
+  }
+
+  public function role()
+  {
+    return $this->hasOne(Role::class);
   }
 }

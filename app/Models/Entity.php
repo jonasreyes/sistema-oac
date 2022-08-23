@@ -57,6 +57,6 @@ class Entity extends Model
 
     public function parish()
     {
-        return $this->belongsTo(Parich::class);
+        return $this->belongsTo(Parish::class);
     }
 }

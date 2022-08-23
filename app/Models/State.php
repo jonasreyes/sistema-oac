@@ -11,22 +11,22 @@ class State extends Model
 
     protected $fillable = ['name', 'iso_3166_2'];
 
-    public function city()
+    public function cities()
     {
         return $this->hasMany(City::class);
     }
 
-    public function municipality()
+    public function municipalities()
     {
         return $this->hasMany(Municipality::class);
     }
 
-    public function entity()
+    public function entities()
     {
         return $this->hasMany(Entity::class);
     }
 
-    public function attention()
+    public function attentions()
     {
         return $this->hasMany(Attention::class);
     }

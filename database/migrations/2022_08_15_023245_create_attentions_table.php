@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('attentions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null')->cascadeOnUpdate();  
             $table->foreignId('entity_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();

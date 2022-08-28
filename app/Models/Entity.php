@@ -10,7 +10,6 @@ class Entity extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'state_id',
         'city_id',
         'municipality_id',
@@ -35,9 +34,9 @@ class Entity extends Model
         'tiktok'
     ];
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
     public function state()
@@ -47,7 +46,7 @@ class Entity extends Model
 
     public function city()
     {
-        return $this->belongsTo(City::class); 
+        return $this->belongsTo(City::class);
     }
 
     public function municipality()
